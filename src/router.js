@@ -7,6 +7,9 @@ Vue.use(Router);
 import PageNotFoundPage from './pages/PageNotFound.vue'; 
 
 //Dinamic import 
+
+const Survey = () =>
+  import('./pages/Survey.vue');
 const FirstPage = () =>
   import('./pages/FirstPage.vue');
 const SecondPage = () =>
@@ -18,12 +21,15 @@ export default new Router({
     y: 0
   }),
   routes: [{
+    path: '/',
+    component: Survey},
+    {
     path: '/firstPage',
-    component: FirstPage,
-  }, {
+    component: FirstPage}, 
+    {
     path: '/secondPage',
-    component: SecondPage,
-  }, {
+    component: SecondPage}, 
+    {
     path: '*',
     component: PageNotFoundPage,
   }]
